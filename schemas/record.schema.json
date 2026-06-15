@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TitleDeed (off-chain record.json) — Enigma-RealEstate-Title-Registry",
+  "type": "object",
+  "required": ["parcelId", "jurisdiction", "legalDescription", "deedDocumentCid", "owner"],
+  "properties": {
+    "parcelId":         { "type": "string", "description": "natural key; hashed to the on-chain id" },
+    "jurisdiction":     { "type": "string", "description": "county / land-registry district" },
+    "legalDescription": { "type": "string" },
+    "deedDocumentCid":  { "type": "string", "description": "IPFS CID of the deed PDF" },
+    "owner":            { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "assessedValue":    { "type": "number" },
+    "recordedAt":       { "type": "string", "format": "date" }
+  }
+}
